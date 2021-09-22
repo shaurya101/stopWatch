@@ -9,14 +9,20 @@
     </head>
 
     <body>
-        <h1>Watch</h1>
-        <h2>Stopwatch</h2>
-        <div id="stopwatch" class= "stopwatch">
-            <button id="start" onclick="startStopWatch()">Start</button>
-            <button id="stop" onclick="stopStopWatch()">Stop</button>
-            <button id="reset" onclick="resetStopWatch()">Reset</button>
+        <div id="selectScreen">
+            <button id="timeScreen" onclick="clock()">Time</button>
+            <button id="stopwatchScreen" onclick="stopwatch()">Stopwatch</button>
         </div>
-        <h2>Clock</h2>
-        <div id="clock" class= "clock"></div>
+
+        
+        <div id="stopwatch" class= "stopwatch hidden">
+            <div id="SWbuttons">
+                <button id="start" onclick="startStopwatch()">Start</button>
+                <button id="stop" onclick="stopStopwatch()">Stop</button>
+                <button id="reset" onclick="resetStopwatch()">Reset</button>
+            </div>
+        </div>
+       
+        <div id="clock" class= "clock hidden"></div>
     </body>
 </html>
