@@ -1,1 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.hidden{
+    display: none !important;
+}
+#selectScreen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+#timeScreen,#stopwatchScreen{
+    height: 120px;
+    width: 220px;
+    font-size: 40px;
+    background-color: #000;
+    color: #fff;
+    box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #fe2e13,
+    0 0 0.8rem #fe2e13,
+    0 0 2.8rem #fe2e13,
+    inset 0 0 1.3rem #fe2e13;
+    
+}
+.stopwatch, .clock{
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#SWbuttons{
+    margin-top: 150px;
+}
+#start, #stop, #reset{ 
+    height: 50px;
+    width: 100px;
+    color: #fff;
+    border: 0.2rem solid #fff;
+    border-radius: 2rem;
+    background-color: #000;
+    margin: 0 10px;
+}
 
+
+
+#clock > h3{
+    color: #fff;
+    text-shadow:
+                0 0 7px #fff,
+                0 0 10px #fff,
+                0 0 21px #fff,
+                0 0 42px #3e13fe,
+                0 0 82px #3e13fe,
+                0 0 92px #3e13fe,
+                0 0 102px #3e13fe,
+                0 0 151px #3e13fe;
+      font-size: 110px;
+}
+#stopwatch > h3{
+    color: #fff;
+    text-shadow:
+                 0 0 7px #fff,
+                 0 0 10px #fff,
+                 0 0 21px #fff,
+                 0 0 42px #13fe3a,
+                 0 0 82px #13fe3a,
+                 0 0 92px #13fe3a,
+                 0 0 102px #13fe3a,
+                 0 0 151px #13fe3a;
+    font-size: 110px;
+}
