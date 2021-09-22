@@ -19,6 +19,7 @@ swTimer.textContent = '00:00:00:00';
 document.querySelector("#stopwatch").prepend(swTimer);
 
 function startStopwatch(){
+    clearInterval(stopwatchTimer);     // Without this if start clicked twice consecutively speed of stopwatch will double
     stopwatchTimer= setInterval(function() {
         swMs++;
         if(swMs==100){
