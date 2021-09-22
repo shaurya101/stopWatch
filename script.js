@@ -1,32 +1,54 @@
+var swHours=0;
+var swMinutes=0;
+var swSeconds=0;
+var swMs=0;
+var stopwatchTimer;
 
-function startStopWatch(){
-    let hours=0;
-    let minutes=0;
-    let seconds=0;
-    let milliseconds=0;
-    let time= `00:00:00:00`;
-    let timer = document.createElement('h3');
-    timer.textContent = time;
-    document.querySelector("#stopwatch").append(timer);
-    let stopwatchTimer= setInterval(function() {
-        milliseconds++;
-        if(milliseconds==100){
-            milliseconds=0;
-            seconds++;
+function stopwatch(){
+    document.querySelector("#clock").classList.add("hidden");
+    document.querySelector("#stopwatch").classList.remove("hidden");
+}
+function clock(){
+    document.querySelector("#stopwatch").classList.add("hidden");
+    document.querySelector("#clock").classList.remove("hidden"); 
+}
+
+
+let swTimer = document.createElement('h3');
+swTimer.textContent = '00:00:00:00';
+document.querySelector("#stopwatch").prepend(swTimer);
+
+function startStopwatch(){
+    stopwatchTimer= setInterval(function() {
+        swMs++;
+        if(swMs==100){
+            swMs=0;
+            swSeconds++;
         }
-        if(seconds==60){
-            seconds=0;
-            minutes++;
+        if(swSeconds==60){
+            swSeconds=0;
+            swMinutes++;
         }
-        if(minutes==60){
-            minutes=0;
-            hours++;
+        if(swMinutes==60){
+            swMinutes=0;
+            swHours++;
         }
-        if(milliseconds<10)
-        milliseconds=`0${milliseconds}`;
-        time= `${timeFormat(hours, minutes, seconds)}:${milliseconds}`;
-        timer.textContent = time;
+        if(swMs<10)
+        swMs=`0${swMs}`;
+        let time= `${timeFormat(swHours, swMinutes, swSeconds)}:${swMs}`;
+        swTimer.textContent = time;
     },10)
+}
+function stopStopwatch(){
+    clearInterval(stopwatchTimer);
+}
+function resetStopwatch(){
+    clearInterval(stopwatchTimer);
+    swHours=0;
+    swMinutes=0;
+    swSeconds=0;
+    swMs=0;
+    swTimer.textContent = '00:00:00:00'
 }
 
 //clock 
