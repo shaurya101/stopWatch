@@ -9,7 +9,7 @@ function startStopWatch(){
     timer.textContent = time;
     document.querySelector("#stopwatch").append(timer);
     let stopwatchTimer= setInterval(function() {
-        milliseconds=milliseconds+10;
+        milliseconds++;
         if(milliseconds==100){
             milliseconds=0;
             seconds++;
@@ -22,13 +22,11 @@ function startStopWatch(){
             minutes=0;
             hours++;
         }
-        if(milliseconds<100)
+        if(milliseconds<10)
         milliseconds=`0${milliseconds}`;
-        time= `${timeFormat(hours, minutes, seconds)} ${milliseconds}`;
+        time= `${timeFormat(hours, minutes, seconds)}:${milliseconds}`;
         timer.textContent = time;
-        
     },10)
-   
 }
 
 //clock 
